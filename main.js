@@ -11,7 +11,6 @@ function updateProgress() {
   progressFill.style.width = `${percentage}%`
   progressText.textContent = `${percentage}%`
   if (percentage === 100) {
-    // progressText.style.color = '#efefef'
     progressText.style.color = '#000'
     progressFill.style.backgroundColor = '#27a07f'
   } else {
