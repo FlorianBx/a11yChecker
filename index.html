@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checklist d'Audit d'Accessibilité</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <meta
+      name="description"
+      content="Cette application vous permet de vérifier votre conformité à la norme WCAG 2.1 en suivant le checklist d'audit d'accessibilité de l'éditeur de logiciels."
+    />
+    <meta
+      name="keywords"
+      content="accessibilité, audit, checklist, WCAG, norme, éditeur de logiciels"
+    />
+    <meta name="author" content="Florian Beaumont" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Checklist d'Audit d'Accessibilité</h1>
+    </header>
+    <main>
+      <div class="progress-container">
+        <div>
+          <div class="progress-text" id="progressText">0%</div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+        </div>
+        <button class="technical-term" onClick="resetProgress()">reset</button>
+      </div>
+      <h2>1. Navigation et Interaction</h2>
+
+      <h3>Zoom et Responsivité</h3>
+      <div class="checklist-item">
+        <input type="checkbox" id="zoom-1" />
+        <label for="zoom-1"
+          >Vérifier que tous les éléments restent utilisables jusqu'à 200% de zoom</label
+        >
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="zoom-2" />
+        <label for="zoom-2">Tester la mise en page responsive à différentes échelles</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="zoom-3" />
+        <label for="zoom-3">S'assurer qu'aucun contenu n'est tronqué ou superposé</label>
+      </div>
+
+      <h3>Navigation Clavier</h3>
+      <div class="checklist-item">
+        <input type="checkbox" id="nav-1" />
+        <label for="nav-1">Tester la navigation complète au clavier</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="nav-2" />
+        <label for="nav-2">Vérifier l'ordre logique de tabulation</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="nav-3" />
+        <label for="nav-3">Confirmer que tous les éléments interactifs sont accessibles</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="nav-4" />
+        <label for="nav-4">Vérifier la présence du focus sur tous les éléments interactifs</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="nav-5" />
+        <label for="nav-5">
+          Implémenter un
+          <a target="_blank" href="https://weba11ylab.dev/guide/skip-links.html">skip-link</a>
+          pour sauter les menus de navigation
+        </label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="nav-6" />
+        <label for="nav-6">
+          S'assurer que la langue de la page est définie:
+          <span class="technical-term">html lang="fr"</span>
+        </label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="nav-7" />
+        <label for="nav-7">
+          Vérifier que les changements de langue sont signalés
+          <span class="technical-term">lang="en"</span> sur les éléments
+        </label>
+      </div>
+
+      <h2>2. Structure HTML</h2>
+      <div class="checklist-item">
+        <input type="checkbox" id="struct-1" />
+        <label for="struct-1">
+          Vérifier la présence et l'utilisation correcte de
+          <span class="technical-term">&lt;header&gt;</span>,
+          <span class="technical-term">&lt;main&gt;</span>,
+          <span class="technical-term">&lt;footer&gt;</span>
+          <a
+            target="_blank"
+            href="https://weba11ylab.dev/guide/html-structure.html"
+            aria-label="Plus d'information"
+            class="more-info"
+          >
+            [?]
+          </a>
+        </label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="struct-2" />
+        <label for="struct-2">
+          Vérifier que les headings (h1-h6) sont utilisés dans l'ordre sans sauter de niveau
+        </label>
+      </div>
+      <h2>3. Formulaires</h2>
+      <div class="checklist-item">
+        <input type="checkbox" id="form-1" />
+        <label for="form-1">
+          Vérifier que tous les champs ont des associés
+          <span class="technical-term">label</span>
+          associés
+        </label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="form-2" />
+        <label for="form-2">
+          S'assurer que les messages d'erreur sont explicites et accessibles
+        </label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="form-3" />
+        <label for="form-3">
+          Vérifier que les champs obligatoires sont clairement indiqués avec un texte
+        </label>
+      </div>
+
+      <h2>4. Les liens</h2>
+      <div class="checklist-item">
+        <input type="checkbox" id="link-1" />
+        <label for="link-1">
+          Vérifier que les intitulés des liens sont explicites (pas de "cliquez ici")
+        </label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="link-2" />
+        <label for="link-2"
+          >S'assurer que les liens sont distinguables du texte (pas uniquement par la
+          couleur)</label
+        >
+      </div>
+
+      <h2>5. Médias</h2>
+
+      <h3>Images</h3>
+      <div class="checklist-item">
+        <input type="checkbox" id="img-1" />
+        <label for="img-1">Vérifier que toutes les images informatives ont un alt descriptif</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="img-2" />
+        <label for="img-2"
+          >Confirmer que les images décoratives ont un
+          <span class="technical-term">alt=""</span></label
+        >
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="img-3" />
+        <label for="img-3">Vérifier que les textes alternatifs sont pertinents et concis</label>
+      </div>
+
+      <h3>Vidéos</h3>
+      <div class="checklist-item">
+        <input type="checkbox" id="video-1" />
+        <label for="video-1">S'assurer que les vidéos ne démarrent pas automatiquement</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="video-2" />
+        <label for="video-2">Vérifier la présence de sous-titres</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="video-3" />
+        <label for="video-3">Implémenter des contrôles de lecture/pause</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="video-4" />
+        <label for="video-4">Fournir des transcriptions si nécessaire</label>
+      </div>
+
+      <h2>6. Animations et Carrousels</h2>
+      <div class="checklist-item">
+        <input type="checkbox" id="anim-1" />
+        <label for="anim-1">Ajouter un bouton d'arrêt pour tous les carrousels</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="anim-2" />
+        <label for="anim-2">Implémenter un raccourci clavier pour arrêter les animations</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="anim-3" />
+        <label for="anim-3"
+          >S'assurer que les animations respectent la préférence prefers-reduced-motion</label
+        >
+      </div>
+
+      <h2>7. Contraste et Lisibilité</h2>
+      <div class="checklist-item">
+        <input type="checkbox" id="contrast-1" />
+        <label for="contrast-1">Vérifier le contraste des textes sur tous les arrière-plans</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="contrast-2" />
+        <label for="contrast-2">Porter une attention particulière au contraste des cards</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="contrast-3" />
+        <label for="contrast-3"
+          >Tester le contraste des éléments interactifs (boutons, liens)</label
+        >
+      </div>
+
+      <div class="resources">
+        <h2>Ressources Utiles</h2>
+        <ul>
+          <li>
+            <a target="_blank" href="https://weba11ylab.dev/guide/html-structure.html">
+              Structure HTML
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="https://weba11ylab.dev/guide/keyboard.html">
+              Navigation clavier
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="https://weba11ylab.dev/guide/skip-links.html">Skip-links</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://weba11ylab.dev/guide/images.html">
+              Images accessibles
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="https://accessiblity-demo.netlify.app/">
+              Démo navigation clavier et focus
+            </a>
+          </li>
+        </ul>
+      </div>
+    </main>
+    <footer>
+      <p>Cette application est encore en beta. Merci de nous signaler tout problème sur</p>
+      <a target="_blank" href="https://github.com/FlorianBx/a11yChecker/issues">
+        <img width="20px" src="./assets/github-mark-white.svg" alt="" />
+        Github
+      </a>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
